@@ -1,0 +1,22 @@
+{
+  "name": "video-maker",
+  "version": "1.0.0",
+  "description": "\"Projeto open source para criar vídeos automatizados.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williammoreschi/criacao-de-videos.git"
+  },
+  "author": "William Moreschi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williammoreschi/criacao-de-videos/issues"
+  },
+  "homepage": "https://github.com/williammoreschi/criacao-de-videos#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
+}
