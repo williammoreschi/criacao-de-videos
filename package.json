@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/williammoreschi/criacao-de-videos/issues"
   },
-  "homepage": "https://github.com/williammoreschi/criacao-de-videos#readme"
+  "homepage": "https://github.com/williammoreschi/criacao-de-videos#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
