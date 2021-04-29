@@ -11,8 +11,11 @@ async function robot(content){
 	async function fetchContentFromWikipedia(content){
 		const algorithmiaAuthentication = algorithmia(algorithmiaApiKey);
 		const wikipediaAlgorithmia = algorithmiaAuthentication.algo("web/WikipediaParser/0.1.2");
-		const wikipediaResponde = await wikipediaAlgorithmia.pipe(content.searchTerm);
-		const wikipediaContent = wikipediaResponde.get();
+		const wikipediaResponse = await wikipediaAlgorithmia.pipe({
+      lang: content.lang,
+      articleName: content.searchTerm
+    });
+		const wikipediaContent = wikipediaResponse.get();
 
 		content.sourceContentOriginal = wikipediaContent.content
 	}
