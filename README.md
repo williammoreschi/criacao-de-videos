@@ -19,7 +19,7 @@ Depois navegue até a pasta **criacao-de-videos/credentials** crie um arquivo de
 Você precisa criar também as credenciais do Watson no site da IBM, também não tem segredo, basta se cadastrar, quando estiver logado no menu superior clique em Catálogo, depois dentro de IA procure por Natural Language Understanding
 
 Novamente, voltando na pasta do projeto ainda dentro da pasta video-maker\credentials você ira criar um novo arquivo de texto com o nome watson-nlu.json e dentro desse arquivo você vai colar as credenciais que copiou anteriormente:
-
+```json
 {
   "apikey" : "...",
   "iam_apikey_description" : "...",
@@ -28,3 +28,4 @@ Novamente, voltando na pasta do projeto ainda dentro da pasta video-maker\creden
   "iam_serviceid_crn": "...",
   "url": "..."
 }
+```
