@@ -18,6 +18,7 @@
   "homepage": "https://github.com/williammoreschi/criacao-de-videos#readme",
   "dependencies": {
     "algorithmia": "^0.3.10",
+    "googleapis": "^73.0.0",
     "ibm-watson": "^6.0.4",
     "readline-sync": "^1.4.10",
     "sbd": "^1.0.18"

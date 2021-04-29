@@ -22,3 +22,14 @@ File `watson-nlu.json`
   "url": "https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/instances/a77d45cd-8014-f347ca4dc1ce"
 }
 ```
+
+## Google Custom Search API
+
+File: `google-search.json`
+
+```
+{
+  "apiKey": "R4Yt4Ovu5TWTUMNMBaZiNqV267hn",
+  "searchEngineId":"5dbaa6cb423001421"
+}
+```
