@@ -17,12 +17,18 @@
   },
   "homepage": "https://github.com/williammoreschi/criacao-de-videos#readme",
   "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "@ffprobe-installer/ffprobe": "^1.1.0",
     "algorithmia": "^0.3.10",
+    "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
     "gm": "^1.23.1",
     "googleapis": "^73.0.0",
     "ibm-watson": "^6.0.4",
     "image-downloader": "^4.0.2",
+    "open": "^8.0.7",
     "readline-sync": "^1.4.10",
-    "sbd": "^1.0.18"
+    "sbd": "^1.0.18",
+    "videoshow": "^0.1.12"
   }
 }
