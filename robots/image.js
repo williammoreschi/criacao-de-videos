@@ -17,13 +17,19 @@ async function robot(){
   async function fetchImagesOfAllSentences(content){
     console.log('> [image-robot] Starting...');
     
-    for(const sentence of content.sentences){
-      const query = `${content.searchTerm} ${sentence.keywords[0]}`;
-      
+    for (let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++) {  
+      let query;
+
+      if (sentenceIndex === 0) {
+        query = `${content.searchTerm}`;
+      } else {
+        query = `${content.searchTerm} ${content.sentences[sentenceIndex].keywords[0]}`;
+      }
+
       console.log(`> [image-robot] Querying Google Images with: "${query}"`);
       
-      sentence.images = await fetchGoogleAndReturnImagesLinks(query);
-      sentence.googleSearchQuery = query;
+      content.sentences[sentenceIndex].images = await fetchGoogleAndReturnImagesLinks(query);
+      content.sentences[sentenceIndex].googleSearchQuery = query
     }
   }
 
