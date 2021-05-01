@@ -68,4 +68,5 @@ content.json
 content/*.png
 content/*.jpg
 content/*.mp4
+content/*.mov
 content/*.js
