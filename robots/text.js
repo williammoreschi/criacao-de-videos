@@ -100,8 +100,9 @@ async function robot(){
         });
         resolve(keywords);
       })
-      .catch(err => {
-        console.log('error: ', err);
+      .catch(error => {
+        console.log('error: ', error);
+        reject(error);
       });
     });
   } 
