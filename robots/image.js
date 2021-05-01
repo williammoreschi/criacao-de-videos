@@ -15,8 +15,13 @@ async function robot(){
   state.save(content);
 
   async function fetchImagesOfAllSentences(content){
+    console.log('> [image-robot] Starting...');
+    
     for(const sentence of content.sentences){
       const query = `${content.searchTerm} ${sentence.keywords[0]}`;
+      
+      console.log(`> [image-robot] Querying Google Images with: "${query}"`);
+      
       sentence.images = await fetchGoogleAndReturnImagesLinks(query);
       sentence.googleSearchQuery = query;
     }
@@ -53,10 +58,10 @@ async function robot(){
 
           await downloadAndSave(imageUrl, `${sentenceIndex}-original.png`);
           content.downloadImages.push(imageUrl);
-          console.log(`> [${sentenceIndex}] [${imageIndex}] Baixou imagem com sucesso: ${imageUrl}`);
+          console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Image successfully downloaded: ${imageUrl}`);
           break;
-        }catch(err){
-          console.log(`> [${sentenceIndex}] [${imageIndex}] Erro ao baixar: ${imageUrl}: ${err}`);
+        }catch(error){
+          console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Error (${imageUrl}): ${error}`)
         }
       }
     }

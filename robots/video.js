@@ -134,7 +134,7 @@ async function robot(){
           if(error){
             return reject(error);
           }
-          console.log('> Creating YouTube thumbnail');
+          console.log('> [video-robot] YouTube thumbnail created');
           resolve();
         });
     });
@@ -145,7 +145,7 @@ async function robot(){
   }
 
   async function renderVideoWithFFmpegAndNode(content) {
-    console.log('> [video-robot] Rendering video with FFmpeg...');
+    console.log('> [video-robot] Rendering video with VideoShow...');
 
     return new Promise((resolve, reject) => {
       let images = [];
@@ -214,7 +214,7 @@ async function robot(){
         })
         .on('end', function (output) {
           resolve();
-          console.error(
+          console.log(
             '\n\n[video-robot] Finished processing. Video created:\n\n',
             output,
             '\n\n',
