@@ -1,6 +1,7 @@
 const express = require('express');
 const google = require('googleapis').google;
 const fs = require('fs');
+const open = require('open');
 const youtube = google.youtube('v3');
 const OAuth2 = google.auth.OAuth2;
 const state = require('./state');
@@ -54,8 +55,8 @@ async function robot(){
         access_type: 'offline',
         scope: ['https://www.googleapis.com/auth/youtube']
       });
-
-      console.log(`> [youtube-robot] Please give your consent: ${consentUrl}`);
+      open(consentUrl);
+      //console.log(`> [youtube-robot] Please give your consent: ${consentUrl}`);
     }
 
     async function waitForGoogleCallback(webServer){
