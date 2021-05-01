@@ -1,6 +1,6 @@
 const fs = require('fs');
 const contentFilePath = './content.json';
-const scriptFilePath = './content/ffmpeg-script.js'
+const scriptFilePath = './content/content-script.js'
 
 function save(content){
   const contentString = JSON.stringify(content);

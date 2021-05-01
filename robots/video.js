@@ -1,17 +1,11 @@
 const gm = require('gm').subClass({imageMagick:true});
 const videoshow = require('videoshow');
 const path = require('path');
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-const ffprobePath = require('@ffprobe-installer/ffprobe').path;
 
 const state = require('./state.js');
 
-const audio = path.join(__dirname, '../templates/1/newsroom.mp3');
-const video = path.join(__dirname, '../content/video-maker.mp4');
-
-let ffmpeg = require('fluent-ffmpeg');
-ffmpeg.setFfmpegPath(ffmpegPath);
-ffmpeg.setFfprobePath(ffprobePath);
+const audio = path.resolve(__dirname,'..','templates','1','newsroom.mp3');
+const video = path.resolve(__dirname,'..','content','video-maker.mov');
 
 async function robot(){
   console.log('> [video-robot] Starting...');
@@ -20,8 +14,9 @@ async function robot(){
   await convertAllImages(content);
   await createAllSentenceImages(content);
   await createYouTubeThumbnail(content);
-  createFFmpegScript(content);
-  await renderVideoWithFFmpegAndNode(content);
+  createScript(content);
+  await renderVideoWithVideoShowAndNode(content);
+
 
   async function convertAllImages(content){
     for (let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++) {
@@ -140,11 +135,11 @@ async function robot(){
     });
   }
 
-  function createFFmpegScript(content) {
+  function createScript(content) {
     state.saveScript(content);
   }
 
-  async function renderVideoWithFFmpegAndNode(content) {
+  async function renderVideoWithVideoShowAndNode(content) {
     console.log('> [video-robot] Rendering video with VideoShow...');
 
     return new Promise((resolve, reject) => {
@@ -176,7 +171,7 @@ async function robot(){
         size: '640x?',
         audioBitrate: '128k',
         audioChannels: 2,
-        format: 'mp4',
+        format: 'mov',
         pixelFormat: 'yuv420p',
         useSubRipSubtitles: false, // Use ASS/SSA subtitles instead
         subtitleStyle: {
@@ -203,14 +198,15 @@ async function robot(){
         .save(video)
         .on('start', function (command) {
           console.log(
-            '\n\n [ FFmpeg still working in ]:\n\n',
+            '\n\n [ VideoShow still working in ]:\n\n',
             command,
             '\n\n[ Please wait... ]',
           );
         })
         .on('error', function (err, stdout, stderr) {
-          console.error('Error:', err);
-          console.error('ffmpeg stderr: ', stderr);
+          console.log('Error:', err);
+          console.log('VideoShow stderr: ', stderr);
+          reject(err);
         })
         .on('end', function (output) {
           resolve();
@@ -222,5 +218,6 @@ async function robot(){
         });
     });
   }
+
 }
 module.exports = robot;
