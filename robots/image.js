@@ -29,7 +29,7 @@ async function robot(){
       console.log(`> [image-robot] Querying Google Images with: "${query}"`);
       
       content.sentences[sentenceIndex].images = await fetchGoogleAndReturnImagesLinks(query);
-      content.sentences[sentenceIndex].googleSearchQuery = query
+      content.sentences[sentenceIndex].googleSearchQuery = query;
     }
   }
 
