@@ -6,8 +6,11 @@
     <img alt="Made by William Moreschi" src="https://img.shields.io/badge/created%20by-William%20Moreschi-blue">
   </a>
 </p>
+
 # Criação de vídeos de forma automatizada
-O Projeto é open source. Para a criação dos vídeos é utilizado a APIS Machining Learn da **Algorithmia**, **Watson - Natural Language Understanding** (IBM) , **Google Imagens e Search**. Esse projeto está sendo desenvolvido com base nos vídeos do youtube feitos no canal do Filipe Deschamps.
+
+O Projeto é open source. Para a criação dos vídeos é utilizado a APIS Machining Learn da **Algorithmia**, **Watson - Natural Language Understanding** (IBM) , 
+**Google Imagens e Search**. Esse projeto está sendo desenvolvido com base nos vídeos do youtube feitos no canal do Filipe Deschamps.
 
 ## Filipe Deschamps - 4 robôs que criam vídeos no YouTube
 [Play list completa](https://www.youtube.com/watch?v=kjhu1LEmRpY&list=PLMdYygf53DP4YTVeu0JxVnWq01uXrLwHi)
