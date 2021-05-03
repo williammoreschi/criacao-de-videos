@@ -59,19 +59,19 @@ Novamente, voltando na pasta do projeto ainda dentro da pasta **criacao-de-video
 ## Setup: Google Cloud Plataform
 Antes de criarmos as api's que iremos utilizar é necessário vincular a nossa conta do Google com o [Google Cloud Plataform](https://cloud.google.com/), na página do **Google Cloud Plataform** você irá clicar no botão **Faça uma Avaliação Gratuita**
 
-:movie_camera: [ver vídeo](https://user-images.githubusercontent.com/2512512/116830554-6f37f080-ab81-11eb-8df7-3d39c2a7716a.mp4)
+[![Video](https://user-images.githubusercontent.com/2512512/116834050-cc886d80-ab92-11eb-98c9-10b9786d14b3.png)](https://user-images.githubusercontent.com/2512512/116830554-6f37f080-ab81-11eb-8df7-3d39c2a7716a.mp4)
 
 ## Criando o Projeto
 Agora é a hora de criarmos um projeto que iremos vincular as Api's que vamos utilizar, para isso basta clicar no menu do topo da página "**Selecionar projeto**" e depois em "**Novo Projeto**", de um nome ao projeto e clique no botão criar.
 
 Após isso o projeto começará a ser criado e assim que terminar um menu vai aparecer com o projeto que acabamos de criar então você irá seleciona-lo
 
-:movie_camera: [ver vídeo](https://user-images.githubusercontent.com/2512512/116830859-98a54c00-ab82-11eb-882a-c55dfb1088e6.mp4) 
+[![Video](https://user-images.githubusercontent.com/2512512/116833957-626fc880-ab92-11eb-85ef-97af013a17a2.png)](https://user-images.githubusercontent.com/2512512/116830859-98a54c00-ab82-11eb-882a-c55dfb1088e6.mp4)
 
 ## Api: Custom Search API
 Com o projeto criado agora é hora de habilitarmos e configurarmos a Api, você irá clicar no menu lateral esquerdo no topo navegar até API's e Serviços > Bibliotecas, no campo de pesquisa basta procurar por Custom Search API, clicar em Ativar, e aguardar até a ativação da api.
 
-:movie_camera: [ver vídeo](https://user-images.githubusercontent.com/2512512/116831305-c4c1cc80-ab84-11eb-938f-abec08d89d83.mp4) 
+[![Video](https://user-images.githubusercontent.com/2512512/116833927-35bbb100-ab92-11eb-80d7-999fb5c4dcfe.png)](https://user-images.githubusercontent.com/2512512/116831305-c4c1cc80-ab84-11eb-938f-abec08d89d83.mp4)
 
 
 Após isso irá aparecer sua Api Key, você vai copia-la e clicar no botão concluir, voltando a pasta do projeto você vai navegar até /credentials e irá criar um novo arquivo chamado google-search.json com o conteúdo abaixo:
@@ -85,7 +85,7 @@ Após isso irá aparecer sua Api Key, você vai copia-la e clicar no botão conc
 Repita o processo acima e busque por **YouTube Data API v3** clique em ativar. Depois no menu lateral seleciona Credenciais e clique em *criar credenciais* selecione a opção **ID do cliente Oauth**. Na próxima tela selecione *Aplicativo da Web* depois preencha os campos.
 no campo url use **http://localhost:5000** e na url de redirecionamento **http://localhost:5000/oauth2callback/**
 
-:movie_camera: [ver vídeo](https://user-images.githubusercontent.com/2512512/116832127-e7a2af80-ab89-11eb-8272-12e0d84772e5.mp4) 
+[![Video](https://user-images.githubusercontent.com/2512512/116833927-35bbb100-ab92-11eb-80d7-999fb5c4dcfe.png)](https://user-images.githubusercontent.com/2512512/116832127-e7a2af80-ab89-11eb-8272-12e0d84772e5.mp4)
 
 Depois de gerado salve o arquivo na pasta */credentials* com nome **google-youtube.json**
 
@@ -95,7 +95,8 @@ Depois de gerado salve o arquivo na pasta */credentials* com nome **google-youtu
 ### Api: Custom Search Enginer
 Agora iremos configurar o nosso motor de busca personalizado do google, para isso você vai acessar o [Custom Search Engine](https://cse.google.com/cse/create/new). Nessa parte a interface mudou um pouco veja o video abaixo.
 
-:movie_camera: [ver vídeo](https://user-images.githubusercontent.com/2512512/116832938-22f2ad80-ab8d-11eb-8a70-b313530d710c.mp4) 
+[![Video](https://user-images.githubusercontent.com/2512512/116833879-fee59b00-ab91-11eb-8d52-5efa25088530.png)](https://user-images.githubusercontent.com/2512512/116832938-22f2ad80-ab8d-11eb-8a70-b313530d710c.mp4)
+ 
 
 > PS.: Para saber mais sobre o schema que o Filipe cita no vídeo acesse schema.org
 
