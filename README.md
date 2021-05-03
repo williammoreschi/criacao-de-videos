@@ -57,9 +57,11 @@ Novamente, voltando na pasta do projeto ainda dentro da pasta **criacao-de-video
 }
 ```
 
-> Ps.: É importante lembrar que alguns recursos do **Google Cloud Plataform** são **Pagos**, por esse motivo é necessário inserir as informações de pagamento, mas fique tranquilo porque iremos utilizar apenas os recursos **Gratuitos**
 
 ## Setup: Google Cloud Plataform
+
+> Ps.: É importante lembrar que alguns recursos do **Google Cloud Plataform** são **Pagos**, por esse motivo é necessário inserir as informações de pagamento, mas fique tranquilo porque iremos utilizar apenas os recursos **Gratuitos**
+
 Antes de criarmos as api's que iremos utilizar é necessário vincular a nossa conta do Google com o [Google Cloud Plataform](https://cloud.google.com/), na página do **Google Cloud Plataform** você irá clicar no botão **Faça uma Avaliação Gratuita**
 
 [![Video](https://user-images.githubusercontent.com/2512512/116834050-cc886d80-ab92-11eb-98c9-10b9786d14b3.png)](https://user-images.githubusercontent.com/2512512/116830554-6f37f080-ab81-11eb-8df7-3d39c2a7716a.mp4)
@@ -116,10 +118,6 @@ Voltando no arquivo **google-search.json** iremos criar uma nova propriedade e i
 
 Agora dentro da pasta criacao-de-videos você pode abrir o cmd ou powershell e executar o comando:
 ```
-# Instalar os pacote
-npm install
-
-# Executar o projeto
 node index.js
 ```
 [![Executando o Projeto](https://user-images.githubusercontent.com/2512512/116833360-0f484680-ab8f-11eb-8b26-fc399379dd82.png)](https://user-images.githubusercontent.com/2512512/116833237-7dd8d480-ab8e-11eb-9cb0-0afc63889576.mp4)
