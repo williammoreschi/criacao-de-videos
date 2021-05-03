@@ -79,7 +79,7 @@ Com o projeto criado agora é hora de habilitarmos e configurarmos a Api, você 
 [![Video](https://user-images.githubusercontent.com/2512512/116833927-35bbb100-ab92-11eb-80d7-999fb5c4dcfe.png)](https://user-images.githubusercontent.com/2512512/116831305-c4c1cc80-ab84-11eb-938f-abec08d89d83.mp4)
 
 
-Após isso irá aparecer sua Api Key, você vai copia-la e clicar no botão concluir, voltando a pasta do projeto você vai navegar até /credentials e irá criar um novo arquivo chamado google-search.json com o conteúdo abaixo:
+Após isso irá aparecer sua Api Key, você vai copia-la e clicar no botão concluir, voltando a pasta do projeto você vai navegar até /credentials e irá criar um novo arquivo chamado **google-search.json** com o conteúdo abaixo:
 ```json
 {
   "apiKey": "API_KEY_AQUI"
