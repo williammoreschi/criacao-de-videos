@@ -120,4 +120,4 @@ Agora dentro da pasta criacao-de-videos você pode abrir o cmd ou powershell e e
 ```
 node index.js
 ```
-[![Executando o Projeto](https://user-images.githubusercontent.com/2512512/116833360-0f484680-ab8f-11eb-8b26-fc399379dd82.png)](./readme-videos/06-resultado-final.mp4)
+[![Executando o Projeto](https://user-images.githubusercontent.com/2512512/116833360-0f484680-ab8f-11eb-8b26-fc399379dd82.png)](readme-videos/06-resultado-final.mp4)
