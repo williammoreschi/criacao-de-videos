@@ -20,10 +20,12 @@
     "algorithmia": "^0.3.10",
     "express": "^4.17.1",
     "gm": "^1.23.1",
+    "google-trends-api": "^4.9.2",
     "googleapis": "^73.0.0",
     "ibm-watson": "^6.0.4",
     "image-downloader": "^4.0.2",
     "open": "^8.0.7",
+    "prompts": "^2.4.1",
     "readline-sync": "^1.4.10",
     "sbd": "^1.0.18",
     "videoshow": "^0.1.12"
