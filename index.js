@@ -1,4 +1,5 @@
 const robots = { 
+	prompts:require('./robots/prompts'),
 	input:require('./robots/input.js'),
 	text:require('./robots/text.js'),
 	state:require('./robots/state.js'),
@@ -7,7 +8,8 @@ const robots = {
 	youtube:require('./robots/youtube.js')
 }
 async function start(){
-	robots.input();
+	//robots.input(); //Pesquisar de forma manual
+	await robots.prompts(); // Devolve os termos do google trends para fazer a pesquisa
 	await robots.text();
 	await robots.image();
 	await robots.video();
