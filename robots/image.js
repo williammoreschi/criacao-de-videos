@@ -1,3 +1,4 @@
+const imageUrlBlockList = require('../content/blockList.json').imageUrlBlockList
 const imageDownload = require('image-downloader');
 const google = require('googleapis').google;
 const customSearch = google.customsearch('v1');
@@ -60,6 +61,10 @@ async function robot(){
         try{
           if(content.downloadImages.includes(imageUrl)){
             throw new Error('Imagem já foi baixada');
+          }
+          
+          if (imageUrlBlockList.includes(imageUrl)){
+            throw new Error('Imagem em block list')
           }
 
           await downloadAndSave(imageUrl, `${sentenceIndex}-original.png`);
