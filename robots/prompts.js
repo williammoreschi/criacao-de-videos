@@ -114,19 +114,16 @@ async function robot(){
         type: 'text',
         name: 'searchTerm',
         message: 'Type a Wikipedia search term:',
-      }
+        validate: value => typeof value === 'string' ? value.trim() !== '' : false,
+      },
     ];
     
     return new Promise(async (resolve, reject) => {
       const promptOptions = {
         onCancel: () => reject(new Error('The user has stopped answering'))
       }
-      const response = await prompts(questions.concat(otherQuestions), promptOptions);
-      if(response.searchTerm.trim().length){
-        resolve(response);
-      }else{
-        reject(new Error('The user has stopped answering'))
-      }
+      const response =  await prompts(questions.concat(otherQuestions), promptOptions);
+      resolve(response);
     });
   }
 
