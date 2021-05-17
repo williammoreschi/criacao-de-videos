@@ -2,6 +2,7 @@ const algorithmia = require('algorithmia')
 const sentenceBoundaryDetection = require('sbd');
 const naturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1');
 const { IamAuthenticator } = require('ibm-watson/auth');
+const lexrank = require('lexrank.js');
 
 const state = require('./state.js');
 
@@ -20,7 +21,8 @@ async function robot(){
 
 	await fetchContentFromWikipedia(content);
   sanitizeContent(content);
-  breakContentIntoSentences(content);
+  await breakContentIntoLexicalRankedSentences(content); /*Texto mais rico*/
+  //breakContentIntoSentences(content); /*Texto mais pobre (pega somente a primeira frase)*/
   limitMaximumSentences(content);
   await fetchKeywordsOfAllSentences(content);
 
@@ -36,7 +38,8 @@ async function robot(){
 		const wikipediaContent = wikipediaResponse.get();
 
 		content.sourceContentOriginal = wikipediaContent.content;
-    console.log('> [text-robot] Fetching done!')
+		//content.sourceContentOriginal = wikipediaContent.summary;
+		console.log('> [text-robot] Fetching done!')
 	}
 
 	function sanitizeContent(content) {
@@ -73,6 +76,31 @@ async function robot(){
         text: sentence,
         keywords: [],
         images: []
+      })
+    })
+  }
+
+  async function breakContentIntoLexicalRankedSentences(content) {
+    return new Promise((resolve, reject) => {
+      content.sentences = []
+
+      lexrank(content.sourceContentSanitized, (error, result) => {
+        if (error) {
+          throw error
+          return reject(error)
+        }
+
+        sentences = result[0].sort(function(a,b){return b.weight.average - a.weight.average})
+
+        sentences.forEach((sentence) => {
+          content.sentences.push({
+            text: sentence.text,
+            keywords: [],
+            images: []
+          })
+        })
+
+        resolve(sentences)
       })
     })
   }
