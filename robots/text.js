@@ -111,29 +111,34 @@ async function robot(){
   }
 
   async function fetchKeywordsOfAllSentences(content){
-    console.log('> [text-robot] Starting to fetch keywords from Watson')
-    for(const sentence of content.sentences){
-      console.log(`> [text-robot] Sentence: "${sentence.text}"`);
-
-      sentence.keywords = await fetchWatsonAndReturnKeywords(sentence.text);
-
-      console.log(`> [text-robot] Keywords: ${sentence.keywords.join(', ')}\n`);
-    }
+    console.log('> [text-robot] Starting to fetch keywords from Watson');
+    const listOfKeywordsToFetch = content.sentences.map(
+      async sentence => await fetchWatsonAndReturnKeywords(sentence)
+    )
+  
+    await Promise.all(listOfKeywordsToFetch);
   }
 
   async function fetchWatsonAndReturnKeywords(sentence){
     return new Promise((resolve, reject) => {
       nlu.analyze({
-        text: sentence,
+        text: sentence.text,
         features: {
           keywords: {}
         }
       })
       .then(response => {
+        console.log(`> [text-robot] Sentence: "${sentence.text}"`);
+        
         const keywords = response.result.keywords.map(keyword => {
           return keyword.text;
         });
-        resolve(keywords);
+        
+        console.log(`> [text-robot] Keywords: ${sentence.keywords.join(', ')}\n`);
+        
+        sentence.keywords = keywords;
+        
+        resolve();
       })
       .catch(error => {
         console.log('error: ', error);
